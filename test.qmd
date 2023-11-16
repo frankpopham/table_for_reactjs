@@ -1,0 +1,95 @@
+---
+title: "Test best table for revealjs"
+format: revealjs
+embed-resources: true
+---
+
+```{r}
+library(tidyverse)
+
+df <- head(mtcars) %>%
+  select(mpg,	cyl, disp, hp, wt) %>%
+  rownames_to_column(var = "Make")
+
+```
+
+## gt
+
+```{r}
+library(gt)
+gt(df)
+
+```
+
+## kable
+
+```{r}
+library(knitr)
+kable(df)
+```
+
+## formattable
+
+```{r}
+library(formattable)
+formattable(df)
+```
+
+## flextable
+
+```{r}
+library(flextable)
+flextable(df)
+```
+
+## reactablefmtr
+
+```{r}
+library(reactablefmtr)
+reactable(df)
+```
+
+## gtextras - guardian
+
+```{r}
+library(gtExtras)
+gt(df) %>%
+  gt_theme_guardian()
+
+```
+
+## gtextras - nytimes
+
+```{r}
+gt(df) %>%
+  gt_theme_nytimes()
+```
+
+## kableextra - minimal
+
+```{r}
+library(kableExtra)
+ kable(df) %>%
+  kable_minimal()
+```
+
+## kableextra - classic
+
+```{r}
+kable(df) %>%
+  kable_classic()
+```
+
+## kableextra - classic2
+
+```{r}
+kable(df) %>%
+  kable_classic_2()
+```
+
+## huxtable
+
+```{r}
+library(huxtable)
+huxtable(df)
+```
